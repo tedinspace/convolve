@@ -164,7 +164,7 @@ export function LeftMenu(props: IProps) {
         />
         &nbsp;&nbsp;
         <Tip content={CheckBoxTip("fFunc", props.input)}>
-          <CircleQuestion size="medium" color="light_blue" />
+          <CircleQuestion size="medium" color="orange_light" />
         </Tip>
       </Box>
       <Box direction="row">
@@ -254,7 +254,7 @@ export function LeftMenu(props: IProps) {
         />
         &nbsp;&nbsp;
         <Tip content={CheckBoxTip("gFunc", props.input)}>
-          <CircleQuestion size="medium" color="light_blue" />
+          <CircleQuestion size="medium" color="orange_light" />
         </Tip>
       </Box>
     </Box>
