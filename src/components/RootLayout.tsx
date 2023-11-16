@@ -1,15 +1,10 @@
-import { Box } from "grommet";
 import React, { Component } from "react";
+import { Box } from "grommet";
 import Plot from "react-plotly.js";
-import {
-  IEvaluation,
-  IScenarioInput,
-} from ".";
+import { IEvaluation, IScenarioInput } from ".";
 import { LeftMenu } from "./LeftMenu";
 import { defaultInput } from "../functions/zoo";
 import { runAllFunctionEvaluations } from "../functions/evaluation";
-
-
 
 interface IProps {
   darkMode: boolean;
@@ -63,6 +58,7 @@ class RootLayout extends Component<IProps, IState> {
               },
             }}
           />
+
           <Plot
             data={[
               {

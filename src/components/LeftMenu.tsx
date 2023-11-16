@@ -1,6 +1,7 @@
 import React from "react";
 import { IScenarioInput } from ".";
-import { Box, CheckBox, Text, TextInput } from "grommet";
+import { Box, CheckBox, Text, TextInput, Tip } from "grommet";
+import { CircleQuestion } from "grommet-icons";
 
 interface IProps {
   input: IScenarioInput;
@@ -161,6 +162,10 @@ export function LeftMenu(props: IProps) {
             });
           }}
         />
+        &nbsp;&nbsp;
+        <Tip content={CheckBoxTip("fFunc", props.input)}>
+          <CircleQuestion size="medium" color="light_blue" />
+        </Tip>
       </Box>
       <Box direction="row">
         g(x)=&nbsp;
@@ -247,7 +252,30 @@ export function LeftMenu(props: IProps) {
             });
           }}
         />
+        &nbsp;&nbsp;
+        <Tip content={CheckBoxTip("gFunc", props.input)}>
+          <CircleQuestion size="medium" color="light_blue" />
+        </Tip>
       </Box>
     </Box>
+  );
+}
+
+function CheckBoxTip(func: "gFunc" | "fFunc", input: IScenarioInput) {
+  if (input[func].enforceRange) {
+    return (
+      "restricted to set range: [" +
+      input[func].rangeMin +
+      ", " +
+      input[func].rangeMax +
+      "]"
+    );
+  }
+  return (
+    "fitted to scenario's x-range: [" +
+    input.xRangeMin +
+    ", " +
+    input.xRangeMax +
+    "]"
   );
 }
