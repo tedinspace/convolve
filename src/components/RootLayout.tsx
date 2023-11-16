@@ -5,6 +5,7 @@ import { IEvaluation, IScenarioInput } from ".";
 import { LeftMenu } from "./LeftMenu";
 import { defaultInput } from "../functions/zoo";
 import { runAllFunctionEvaluations } from "../functions/evaluation";
+var Latex = require('react-latex');
 
 interface IProps {
   darkMode: boolean;
@@ -36,6 +37,8 @@ class RootLayout extends Component<IProps, IState> {
           }}
         />
         <Box fill pad="medium">
+        
+
           <Plot
             data={[
               {

@@ -2,7 +2,7 @@ import React from "react";
 import { IScenarioInput } from ".";
 import { Box, CheckBox, Text, TextInput, Tip } from "grommet";
 import { CircleQuestion } from "grommet-icons";
-
+const Latex = require('react-latex');
 interface IProps {
   input: IScenarioInput;
   updateInput(input: IScenarioInput): void;
@@ -18,6 +18,7 @@ export function LeftMenu(props: IProps) {
       elevation="small"
       border={{ color: "bar_accent", size: "2px", side: "right" }}
     >
+      <Latex>$(f*g)(x)=\int f(\tau)g(x-\tau)d\tau$</Latex>
       <Text>
         <b>Input</b>
       </Text>
