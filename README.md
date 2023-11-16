@@ -1,21 +1,40 @@
 # www.tedsite.com/convolve
 
+numerically compute convolution integrals given a specified interval, f(x), and g(x)
+
 ## TODO
 
-1. min/max/cardianality setting
+### Major
 
-2. get grommet to behave in dark mode
+- which to katex
 
-3. latex render header 
+- dark mode graphs
 
-4. plotly design graphs
+- implement layout of plots (and make sure plotly behaves on resizing)
 
-5. coordinated convolution algorithms
-- everything updates at the same time on changes
-- min/max; linespace 
-- g(x), f(x), g(-x)
+- examples section (with latex and a loading button)
+
+- functions section/table 
+
+- set up github pages (installation, fix package.json, test it out)
+
+### Convolution work space
+
+- slider for setting value of tau 
+
+- animate g(x-tau) on slider with dashed lines
+
+- have f(x) stationary but in dashed lines
+
+- draw convolution as it progresses (dashed and solid? or just solid as it comes )
+
+### Minor Aesthetic/Usability 
+
+- add a warning about the true ranges of functions when user inputs out of range
+
+- consider hiding steps
+
+- color choosing: be able to select color of function
 
 
-Extras
 
-1. color choosing 

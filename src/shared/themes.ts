@@ -1,18 +1,4 @@
-// export const DARK0 = "#111418";
-// export const DARK1 = "#1C2127";
-// export const DARK2 = "#252A31";
-// export const DARK3 = "#2F343C";
-// export const DARK4 = "#383E47";
-// export const DARK5 = "#404854";
-// export const DARK6 = "#48505c";
-// export const LIGHT0 = "#f0e5e1";
-// export const POP0 = "#913a1d";
-// export const POP1 = "#c96d4f";
-// export const POP2 = "#d4a798";
-// export const HEADER0 = "#ABB3BF";
-// export const TED = "#a4c8de";
-// export const UPPERBAR0 = "#272e38";
-// export const UPPERBAR1 = "#161b22";
+
 
 export const theme = {
   global: {
@@ -43,8 +29,68 @@ export const theme = {
         dark: "#111418", // DARK 0
         light: "#fff",
       },
+      level1: {
+        dark: "#1C2127", // DARK 0
+        light: "#E5E8EB",
+      },
+      header: {
+        dark: "#ABB3BF",
+        light: "gray",
+      },
+
+      blue: {
+        dark: "light_blue",
+        light: "light_blue_medium",
+      },
+      orange: {
+        dark: "orange_light",
+        light: "orange_medium",
+      },
+      body_text: {
+        dark: "#ABB3BF",
+        light: "black",
+      },
+      swap_soft:{
+        dark:"#fff",
+        light:"#8F99A8"
+      },
+      warning: "#EB6847",
+      success0: "#238C2C",
+      success1: "#43BF4D",
 
       brand: "light_blue",
+      "accent-1": "light_blue",
+      "neutral-1": "light_blue",
+      "neutral-2": "light_blue",
+      "neutral-3": "light_blue",
+      "neutral-4": "light_blue",
+      focus: "light_blue",
+      control: "light_blue",
+      active: "orange_medium",
+    },
+  },
+  card: {
+    hover: {
+      container: {
+        elevation: "large",
+      },
+    },
+    container: {
+      elevation: "none",
+      extend: `transition: all 0.2s ease-in-out;`,
+    },
+  },
+  clock: {
+    analog: {
+      hour: {
+        color: "light_blue",
+      },
+      minute: {
+        color: "orange_medium",
+      },
+      second: {
+        color: "orange_light",
+      },
     },
   },
 };
