@@ -1,5 +1,9 @@
 import { IScenarioInput } from "../components";
 
+/**
+ * 
+ * @returns 
+ */
 export const defaultInput = (): IScenarioInput => {
   return {
     xRangeMin: -5,
