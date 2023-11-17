@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/convolve/static/css/main.c61a430a.css",
-    "main.js": "/convolve/static/js/main.62c85a1f.js",
+    "main.js": "/convolve/static/js/main.1296e092.js",
     "static/js/787.65a59f4b.chunk.js": "/convolve/static/js/787.65a59f4b.chunk.js",
     "index.html": "/convolve/index.html",
     "main.c61a430a.css.map": "/convolve/static/css/main.c61a430a.css.map",
-    "main.62c85a1f.js.map": "/convolve/static/js/main.62c85a1f.js.map",
+    "main.1296e092.js.map": "/convolve/static/js/main.1296e092.js.map",
     "787.65a59f4b.chunk.js.map": "/convolve/static/js/787.65a59f4b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c61a430a.css",
-    "static/js/main.62c85a1f.js"
+    "static/js/main.1296e092.js"
   ]
 }
