@@ -12,6 +12,7 @@ import { HelpTab } from "./tabs/HelpTab";
 interface IProps {
   input: IScenarioInput;
   updateInput(input: IScenarioInput): void;
+
 }
 export function LeftMenu(props: IProps) {
   return (
@@ -30,9 +31,8 @@ export function LeftMenu(props: IProps) {
           <ExamplesTab updateInput={props.updateInput} />
         </Tab>
         <Tab title="Input" icon={<Services />}>
-          <InputTab input={props.input} updateInput={props.updateInput} />
+          <InputTab {...props} />
         </Tab>
-
         <Tab title="Function Guide" icon={<HelpBook />}>
          <HelpTab/>
         </Tab>

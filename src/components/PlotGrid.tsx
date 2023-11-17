@@ -1,10 +1,16 @@
-import { Box, RangeInput } from "grommet";
+import { Box, Button, RangeInput } from "grommet";
 import Plot from "react-plotly.js";
 import { default_margin, default_config } from "../functions/plot";
 import { partialConvolutionTrace, flippedGTrace } from "../functions/traces";
 import { IEvaluation, IScenarioInput } from ".";
+import {
+  ChapterNext,
+  ChapterPrevious,
+  FastForward,
+  Rewind,
+} from "grommet-icons";
 const Latex = require("react-latex");
-
+const STEP_SIZE: number = 20;
 interface IProps {
   darkMode: boolean;
   input: IScenarioInput;
@@ -142,18 +148,59 @@ export function PlotGrid(props: IProps) {
             size: "2px",
             color: "bar_accent",
           }}
-          style={{marginBottom:"10"}}
-        
+          style={{ marginBottom: "10" }}
         >
-          <RangeInput
-            value={props.tau}
-            min={1}
-            max={props.input.cardinality - 1}
-            onChange={(e) => {
-              props.updateTau(+e.target.value);
-            }}
-            color={"blue"}
-          />
+          <Box direction="row" fill justify="center" align="center">
+            <Button
+              hoverIndicator
+              icon={<ChapterPrevious />}
+              size="small"
+              onClick={() => {
+                props.updateTau(1);
+              }}
+            />
+            <Button
+              hoverIndicator
+              icon={<Rewind />}
+              size="small"
+              onClick={() => {
+                if (props.tau - STEP_SIZE <= 0) {
+                  props.updateTau(1);
+                } else {
+                  props.updateTau(props.tau - STEP_SIZE);
+                }
+              }}
+            />
+            <RangeInput
+              value={props.tau}
+              min={1}
+              max={props.input.cardinality - 1}
+              onChange={(e) => {
+                props.updateTau(+e.target.value);
+              }}
+              color={"blue"}
+            />
+            <Button
+              hoverIndicator
+              icon={<FastForward />}
+              size="small"
+              onClick={() => {
+                if (props.tau + STEP_SIZE >= props.input.cardinality) {
+                  props.updateTau(props.input.cardinality - 1);
+                } else {
+                  props.updateTau(props.tau + STEP_SIZE);
+                }
+              }}
+            />
+            <Button
+              hoverIndicator
+              icon={<ChapterNext />}
+              size="small"
+              onClick={() => {
+                props.updateTau(props.input.cardinality - 1);
+              }}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

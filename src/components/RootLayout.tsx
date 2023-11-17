@@ -29,13 +29,14 @@ class RootLayout extends Component<IProps, IState> {
     return (
       <Box fill direction="row">
         <LeftMenu
-          input={this.state.input}
+          {...this.state}
           updateInput={(i: IScenarioInput) => {
             this.setState({
               input: i,
               results: runAllFunctionEvaluations(i),
             });
           }}
+     
         />
         <PlotGrid
           {...this.state}

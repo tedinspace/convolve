@@ -1,74 +1,17 @@
 import React from "react";
 import { IScenarioInput } from "../..";
-import { Box, CheckBox, Text, TextInput, Tip } from "grommet";
-import { CircleQuestion } from "grommet-icons";
+import { Box } from "grommet";
+import { XRangeSetting } from "./kit/XRangeSetting";
 interface IProps {
   input: IScenarioInput;
   updateInput(input: IScenarioInput): void;
+
 }
 export function InputTab(props: IProps) {
   return (
     <Box>
-      <Text>
-        <b>Input</b>
-      </Text>
-      x-range [min, max]
-      <Box direction="row">
-        <div>
-          <TextInput
-            type="number"
-            size="medium"
-            value={props.input.xRangeMin}
-            style={{ height: 20, textAlign: "center" }}
-            width={"65px"}
-            onChange={(e) => {
-              props.updateInput({
-                ...props.input,
-                ...{
-                  xRangeMin: +e.target.value,
-                },
-              });
-            }}
-          />
-        </div>
-        &nbsp;
-        <div>
-          <TextInput
-            size="medium"
-            type="number"
-            value={props.input.xRangeMax}
-            style={{ height: 20, textAlign: "center" }}
-            width={"65px"}
-            onChange={(e) => {
-              props.updateInput({
-                ...props.input,
-                ...{
-                  xRangeMax: +e.target.value,
-                },
-              });
-            }}
-          />
-        </div>
-      </Box>
-      # steps
-      <TextInput
-        max={10000}
-        min={10}
-        type="number"
-        size="medium"
-        value={props.input.cardinality}
-        style={{ height: 20, textAlign: "center" }}
-        width={"100px"}
-        onChange={(e) => {
-          props.updateInput({
-            ...props.input,
-            ...{
-              cardinality: +e.target.value,
-            },
-          });
-        }}
-      />
-      <Box direction="row">
+      <XRangeSetting {...props}/>
+      {/* <Box direction="row">
         f(x)=&nbsp;&nbsp;
         <TextInput
           value={props.input.fFunc.func}
@@ -247,7 +190,7 @@ export function InputTab(props: IProps) {
         <Tip content={CheckBoxTip("gFunc", props.input)}>
           <CircleQuestion size="medium" color="orange_light" />
         </Tip>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
