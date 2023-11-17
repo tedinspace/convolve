@@ -71,5 +71,6 @@ export const flipAndShift = (x: number[], z: number) => {
   x.forEach((xi) => {
     zMinusX.push(z - xi);
   });
-  return zMinusX;
+  return zMinusX
+   
 };

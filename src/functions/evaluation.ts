@@ -105,7 +105,7 @@ export const convolve = (
       }
       return {
         x: x,
-        y: y,
+        y:y
       };
     } catch (e) {}
   }

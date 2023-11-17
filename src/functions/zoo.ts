@@ -10,16 +10,16 @@ export const defaultInput = (): IScenarioInput => {
     xRangeMax: 5,
     cardinality: 1000,
     fFunc: {
-      func: "1",
+      func: "x",
       enforceRange: true,
       rangeMin: 0,
       rangeMax: 1,
     },
     gFunc: {
-      func: "x+1",
+      func: "-x+1",
       enforceRange: true,
-      rangeMin: -1,
-      rangeMax: 0,
+      rangeMin: 0,
+      rangeMax: 1,
     },
   };
 };
