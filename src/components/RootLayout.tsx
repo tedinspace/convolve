@@ -5,7 +5,7 @@ import { IEvaluation, IScenarioInput } from ".";
 import { LeftMenu } from "./LeftMenu";
 import { defaultInput } from "../functions/zoo";
 import { runAllFunctionEvaluations } from "../functions/evaluation";
-var Latex = require('react-latex');
+import { default_config, default_margin } from "../functions/plot";
 
 interface IProps {
   darkMode: boolean;
@@ -36,10 +36,93 @@ class RootLayout extends Component<IProps, IState> {
             });
           }}
         />
-        <Box fill pad="medium">
-        
+        <Box fill>
+          <Box
+            fill
+            direction="row"
+            pad="xsmall"
+            border={{
+              side: "bottom",
+              size: "3px",
+              color: "bar_accent",
+            }}
+            elevation="xsmall"
+          >
+            <Box fill>
+              <Plot
+                data={[
+                  {
+                    x: this.state.results.f.x,
+                    y: this.state.results.f.y,
+                    type: "scatter",
+                    mode: "lines",
+                    marker: { color: "red" },
+                  },
+                ]}
+                style={{ width: "100%", height: "50%" }}
+                useResizeHandler={true}
+                layout={{
+                  title: "f(x)",
+                  margin: default_margin(),
+                  dragmode:'select'
+                }}
+                config={default_config()}
 
-          <Plot
+              />
+              <Plot
+                data={[
+                  {
+                    x: this.state.results.g.x,
+                    y: this.state.results.g.y,
+                    type: "scatter",
+                    mode: "lines",
+                    marker: { color: "blue" },
+                  },
+                ]}
+                style={{ width: "100%", height: "50%" }}
+                useResizeHandler={true}
+                layout={{
+                  title: "g(x)",
+                  margin: default_margin(),
+                  dragmode:'select'
+                }}
+                config={default_config()}
+
+              />
+            </Box>
+            <Box fill>
+              <Plot
+                data={[
+                  {
+                    x: this.state.results.c.x,
+                    y: this.state.results.c.y,
+                    type: "scatter",
+                    mode: "lines",
+                    marker: { color: "green" },
+                  },
+                ]}
+                style={{ width: "100%", height: "100%" }}
+                useResizeHandler={true}
+                layout={{
+                  title: "(f*g)(x)",
+                  margin: default_margin(),
+                  dragmode:'select'
+                }}
+                config={default_config()}
+              />
+            </Box>
+          </Box>
+          <Box fill></Box>
+        </Box>
+      </Box>
+    );
+  }
+}
+
+export default RootLayout;
+
+/*
+  <Plot
             data={[
               {
                 x: this.state.results.f.x,
@@ -106,10 +189,4 @@ class RootLayout extends Component<IProps, IState> {
               },
             }}
           />
-        </Box>
-      </Box>
-    );
-  }
-}
-
-export default RootLayout;
+*/

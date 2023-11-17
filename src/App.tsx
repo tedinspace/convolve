@@ -19,10 +19,9 @@ function App() {
           toggleDarkLight={() => {
             toggleDarkLight(!darkMode);
             updateThemeSetting(!darkMode);
-
           }}
         />
-        <RootLayout darkMode={darkMode}/>
+        <RootLayout darkMode={darkMode} />
       </Box>
     </Grommet>
   );

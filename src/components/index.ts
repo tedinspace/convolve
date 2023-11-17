@@ -2,7 +2,6 @@ export interface IScenarioInput {
   xRangeMin: number;
   xRangeMax: number;
   cardinality: number;
-
   fFunc: IFunctionInput
   gFunc: IFunctionInput
 }
