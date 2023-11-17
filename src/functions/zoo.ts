@@ -1,4 +1,4 @@
-import { IScenarioInput } from "../components";
+import { IFunctionInput, IScenarioInput } from "../components";
 
 /**
  * 
@@ -8,18 +8,35 @@ export const defaultInput = (): IScenarioInput => {
   return {
     xRangeMin: -5,
     xRangeMax: 5,
-    cardinality: 1000,
-    fFunc: {
-      func: "x",
-      enforceRange: true,
-      rangeMin: 0,
-      rangeMax: 1,
-    },
-    gFunc: {
-      func: "-x+1",
-      enforceRange: true,
-      rangeMin: 0,
-      rangeMax: 1,
-    },
+    cardinality: 750,
+    fFunc: leftTriangle(),
+    gFunc: rightTriangle()
   };
 };
+
+const leftTriangle =():IFunctionInput=>{
+  return {
+    func: "x+1",
+    enforceRange: true,
+    rangeMin: -1,
+    rangeMax: 0,
+  }
+}
+
+const rightTriangle =():IFunctionInput=>{
+  return {
+    func: "-x+1",
+    enforceRange: true,
+    rangeMin: 0,
+    rangeMax: 1,
+  }
+}
+
+export const unitSquare =():IFunctionInput=>{
+  return {
+    func: "1",
+    enforceRange: true,
+    rangeMin: 0,
+    rangeMax: 1,
+  }
+}
