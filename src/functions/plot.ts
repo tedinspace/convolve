@@ -20,3 +20,26 @@ export const default_config = ():any => {
     ],
   };
 };
+
+export const dark_layout = ():any=>{
+  return {
+    paper_bgcolor: "#1C2127",
+    plot_bgcolor: "#1C2127",
+    font: {
+      color: "white",
+    },
+    xaxis: {
+      color: "white",
+      linecolor: "#404854",
+      zerolinecolor: "#404854",
+    },
+    yaxis: {
+      color: "white",
+      linecolor: "#383E47",
+      zerolinecolor: "#383E47",
+    },
+
+    dragmode: false,
+    showlegend: false,
+  }
+}

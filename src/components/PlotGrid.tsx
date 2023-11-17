@@ -1,6 +1,6 @@
 import { Box, Button, RangeInput } from "grommet";
 import Plot from "react-plotly.js";
-import { default_margin, default_config } from "../functions/plot";
+import { default_margin, default_config, dark_layout } from "../functions/plot";
 import { partialConvolutionTrace, flippedGTrace } from "../functions/traces";
 import { IEvaluation, IScenarioInput } from ".";
 import {
@@ -45,11 +45,22 @@ export function PlotGrid(props: IProps) {
             ]}
             style={{ width: "100%", height: "50%" }}
             useResizeHandler={true}
-            layout={{
-              title: "f(x)",
-              margin: default_margin(),
-              dragmode: false,
-            }}
+            layout={
+              !props.darkMode
+                ? {
+                    title: "f(x)",
+                    margin: default_margin(),
+                    dragmode: false,
+                  }
+                : {
+                    ...dark_layout(),
+                    ...{
+                      title: "f(x)",
+                      margin: default_margin(),
+                      dragmode: false,
+                    },
+                  }
+            }
             config={default_config()}
           />
           <Plot
@@ -64,11 +75,22 @@ export function PlotGrid(props: IProps) {
             ]}
             style={{ width: "100%", height: "50%" }}
             useResizeHandler={true}
-            layout={{
-              title: "g(x)",
-              margin: default_margin(),
-              dragmode: false,
-            }}
+            layout={
+              !props.darkMode
+                ? {
+                    title: "g(x)",
+                    margin: default_margin(),
+                    dragmode: false,
+                  }
+                : {
+                    ...dark_layout(),
+                    ...{
+                      title: "g(x)",
+                      margin: default_margin(),
+                      dragmode: false,
+                    },
+                  }
+            }
             config={default_config()}
           />
         </Box>
@@ -85,11 +107,22 @@ export function PlotGrid(props: IProps) {
             ]}
             style={{ width: "100%", height: "100%" }}
             useResizeHandler={true}
-            layout={{
-              title: "(f*g)(x)",
-              margin: default_margin(),
-              dragmode: false,
-            }}
+            layout={
+              !props.darkMode
+                ? {
+                    title: "(f*g)(x)",
+                    margin: default_margin(),
+                    dragmode: false,
+                  }
+                : {
+                    ...dark_layout(),
+                    ...{
+                      title: "(f*g)(x)",
+                      margin: default_margin(),
+                      dragmode: false,
+                    },
+                  }
+            }
             config={default_config()}
           />
         </Box>
@@ -127,28 +160,40 @@ export function PlotGrid(props: IProps) {
           ]}
           style={{ width: "100%", height: "100%" }}
           useResizeHandler={true}
-          layout={{
-            margin: {
-              t: 10, //top margin
-              l: 20, //left margin
-              r: 20, //right margin
-              b: 20, //bottom margin
-            },
-            dragmode: false,
-            showlegend: false,
-          }}
+          layout={
+            !props.darkMode
+              ? {
+                  margin: {
+                    t: 10,
+                    l: 20,
+                    r: 20,
+                    b: 20,
+                  },
+                }
+              : {
+                  ...dark_layout(),
+                  ...{
+                    margin: {
+                      t: 10,
+                      l: 20,
+                      r: 20,
+                      b: 20,
+                    },
+                  },
+                }
+          }
           config={default_config()}
         />
         <Box
           align="center"
           pad="xsmall"
-          background={"level1"}
+          background={"time_bar"}
           border={{
             side: "all",
             size: "2px",
             color: "bar_accent",
           }}
-          style={{ marginBottom: "10",height:45,minHeight:45 }}
+          style={{ marginBottom: "10", height: 45, minHeight: 45 }}
         >
           <Box direction="row" fill justify="center" align="center">
             <Button

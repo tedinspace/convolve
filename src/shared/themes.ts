@@ -54,6 +54,10 @@ export const theme = {
         dark:"#fff",
         light:"#8F99A8"
       },
+      time_bar: {
+        dark: "#383E47", 
+        light: "#D3D8DE",
+      },
       warning: "#EB6847",
       success0: "#238C2C",
       success1: "#43BF4D",
