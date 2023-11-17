@@ -16,7 +16,6 @@ numerically compute convolution integrals given a specified interval, f(x), and 
 
 - functions section/table 
 
-- set up github pages (installation, fix package.json, test it out)
 
 ### Convolution work space
 
