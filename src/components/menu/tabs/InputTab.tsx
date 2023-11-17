@@ -1,5 +1,5 @@
 import React from "react";
-import { IScenarioInput } from ".";
+import { IScenarioInput } from "../..";
 import { Box, CheckBox, Text, TextInput, Tip } from "grommet";
 import { CircleQuestion } from "grommet-icons";
 interface IProps {
@@ -8,10 +8,7 @@ interface IProps {
 }
 export function InputTab(props: IProps) {
   return (
-    <Box
-    
-    >
-    
+    <Box>
       <Text>
         <b>Input</b>
       </Text>

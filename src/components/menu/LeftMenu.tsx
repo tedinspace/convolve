@@ -1,13 +1,14 @@
 import React from "react";
-import { IScenarioInput } from ".";
-import { Box, Tab, Tabs} from "grommet";
+import { IScenarioInput } from "..";
 import {
-  Services,
-  HelpBook,
-  Catalog,
-} from "grommet-icons";
-import { InputTab } from "./InputTab";
-import { ExamplesTab } from "./ExamplesTab";
+  Box,
+  Tab,
+  Tabs,
+} from "grommet";
+import { Services, HelpBook, Catalog } from "grommet-icons";
+import { InputTab } from "./tabs/InputTab";
+import { ExamplesTab } from "./tabs/ExamplesTab";
+import { HelpTab } from "./tabs/HelpTab";
 interface IProps {
   input: IScenarioInput;
   updateInput(input: IScenarioInput): void;
@@ -22,17 +23,18 @@ export function LeftMenu(props: IProps) {
       pad="medium"
       elevation="small"
       border={{ color: "bar_accent", size: "2px", side: "right" }}
+      overflow={"auto"}
     >
       <Tabs>
-      <Tab title="Examples" icon={<Catalog />}>
-          <ExamplesTab/>
+        <Tab title="Examples" icon={<Catalog />}>
+          <ExamplesTab updateInput={props.updateInput} />
         </Tab>
         <Tab title="Input" icon={<Services />}>
           <InputTab input={props.input} updateInput={props.updateInput} />
         </Tab>
-       
-        <Tab title="Usage Guide" icon={<HelpBook />}>
-          <Box margin="small">Function Tips</Box>
+
+        <Tab title="Function Guide" icon={<HelpBook />}>
+         <HelpTab/>
         </Tab>
       </Tabs>
     </Box>

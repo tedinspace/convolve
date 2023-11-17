@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Box } from "grommet";
 import { IEvaluation, IScenarioInput } from ".";
-import { LeftMenu } from "./LeftMenu";
+import { LeftMenu } from "./menu/LeftMenu";
 import { defaultInput } from "../functions/zoo";
 import { runAllFunctionEvaluations } from "../functions/evaluation";
 import { PlotGrid } from "./PlotGrid";
