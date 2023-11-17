@@ -169,6 +169,7 @@ export function PlotGrid(props: IProps) {
                     r: 20,
                     b: 20,
                   },
+                  showlegend: false,
                 }
               : {
                   ...dark_layout(),
