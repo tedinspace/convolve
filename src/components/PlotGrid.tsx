@@ -165,7 +165,7 @@ export function PlotGrid(props: IProps) {
               ? {
                   margin: {
                     t: 10,
-                    l: 20,
+                    l: 50,
                     r: 20,
                     b: 20,
                   },
@@ -176,7 +176,7 @@ export function PlotGrid(props: IProps) {
                   ...{
                     margin: {
                       t: 10,
-                      l: 20,
+                      l: 50,
                       r: 20,
                       b: 20,
                     },

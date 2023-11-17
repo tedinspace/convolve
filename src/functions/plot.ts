@@ -1,7 +1,7 @@
 export const default_margin = () => {
   return {
     t: 40, //top margin
-    l: 20, //left margin
+    l: 50, //left margin
     r: 20, //right margin
     b: 20, //bottom margin
   };
