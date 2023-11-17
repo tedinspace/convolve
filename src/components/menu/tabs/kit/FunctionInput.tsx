@@ -14,10 +14,10 @@ export function FunctionInput(props: IProps) {
       <Text size="medium">
         <i>{props.func === "fFunc" ? "f(x)=" : "g(x)="}</i>
       </Text>
-      <Box direction="row" style={{ marginTop: 10, marginLeft:20 }} >
+      <Box direction="row" style={{ marginTop: 10, marginLeft: 20 }}>
         <TextInput
           value={props.input[props.func].func}
-          style={{ height: 30 }}
+          style={{ height: 25 }}
           width={"225px"}
           onChange={(e) => {
             props.updateInput({
@@ -34,20 +34,24 @@ export function FunctionInput(props: IProps) {
           }}
         />
       </Box>
-      <Box direction="row" style={{ marginTop: 10 , marginLeft:20}} align="center">
+      <Box
+        direction="row"
+        style={{ marginTop: 10, marginLeft: 20 }}
+        align="center"
+      >
         <Latex>$x \in $</Latex>&nbsp;
         <div>
           <TextInput
             type="number"
             size="medium"
             value={props.input[props.func].rangeMin}
-            style={{ height: 30, textAlign: "center" }}
+            style={{ height: 25, textAlign: "center" }}
             width={"90px"}
             onChange={(e) => {
               props.updateInput({
                 ...props.input,
                 ...{
-                    [props.func]: {
+                  [props.func]: {
                     ...props.input[props.func],
                     ...{
                       rangeMin: +e.target.value,
@@ -65,13 +69,13 @@ export function FunctionInput(props: IProps) {
             size="medium"
             type="number"
             value={props.input[props.func].rangeMax}
-            style={{ height: 30, textAlign: "center" }}
+            style={{ height: 25, textAlign: "center" }}
             width={"90px"}
             onChange={(e) => {
               props.updateInput({
                 ...props.input,
                 ...{
-                    [props.func]: {
+                  [props.func]: {
                     ...props.input[props.func],
                     ...{
                       rangeMax: +e.target.value,
@@ -101,31 +105,38 @@ export function FunctionInput(props: IProps) {
           }}
         />
         &nbsp;&nbsp;
-        <Tip content={CheckBoxTip( props.func, props.input)}>
-          <CircleQuestion size="medium"/>
+        <Tip content={CheckBoxTip(props.func, props.input)}>
+          <CircleQuestion size="medium" />
         </Tip>
       </Box>
+      {/*   <Box width={"225px"} style={{ marginLeft: 20, marginTop: 10 }}>
+        <Button
+          pad={"none"}
+          icon={<AddCircle size="15px" />}
+          hoverIndicator
+          label="add piece"
+          fill="horizontal"
+        />
+      </Box>*/}
     </Box>
   );
 }
 
-
 function CheckBoxTip(func: "gFunc" | "fFunc", input: IScenarioInput) {
-    if (input[func].enforceRange) {
-      return (
-        "restricted to set range: [" +
-        input[func].rangeMin +
-        ", " +
-        input[func].rangeMax +
-        "]"
-      );
-    }
+  if (input[func].enforceRange) {
     return (
-      "fitted to scenario's x-range: [" +
-      input.xRangeMin +
+      "restricted to set range: [" +
+      input[func].rangeMin +
       ", " +
-      input.xRangeMax +
+      input[func].rangeMax +
       "]"
     );
   }
-  
+  return (
+    "fitted to scenario's x-range: [" +
+    input.xRangeMin +
+    ", " +
+    input.xRangeMax +
+    "]"
+  );
+}

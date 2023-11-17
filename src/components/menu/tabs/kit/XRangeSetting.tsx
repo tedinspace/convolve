@@ -18,7 +18,7 @@ export function XRangeSetting(props: IProps) {
             type="number"
             size="medium"
             value={props.input.xRangeMin}
-            style={{ height: 30, textAlign: "center" }}
+            style={{ height: 25, textAlign: "center" }}
             width={"120px"}
             onChange={(e) => {
               props.updateInput({
@@ -36,7 +36,7 @@ export function XRangeSetting(props: IProps) {
             size="medium"
             type="number"
             value={props.input.xRangeMax}
-            style={{ height: 30, textAlign: "center" }}
+            style={{ height: 25, textAlign: "center" }}
             width={"120px"}
             onChange={(e) => {
               props.updateInput({
