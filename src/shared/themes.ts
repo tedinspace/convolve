@@ -72,6 +72,21 @@ export const theme = {
       control: "light_blue",
       active: "orange_medium",
     },
+    
+  },
+  tab:{
+    border:{
+      color:"swap_soft",
+      active:{
+        color:"orange"
+      }
+    
+    },
+    color:"swap_soft",
+    active:{
+      color:"orange",
+     
+    }
   },
   card: {
     hover: {
@@ -97,4 +112,5 @@ export const theme = {
       },
     },
   },
+  
 };
