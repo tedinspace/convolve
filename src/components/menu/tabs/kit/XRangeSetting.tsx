@@ -9,7 +9,7 @@ interface IProps {
 export function XRangeSetting(props: IProps) {
   return (
     <Box style={{ marginTop: 30 }}>
-      <Text size="large">
+      <Text size="medium">
         x-range <i>[min, max]</i>
       </Text>
       <Box direction="row" style={{ marginTop: 10,marginLeft:0 }} align="center">

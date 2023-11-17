@@ -11,7 +11,7 @@ interface IProps {
 export function FunctionInput(props: IProps) {
   return (
     <Box style={{ marginTop: 55 }}>
-      <Text size="large">
+      <Text size="medium">
         <i>{props.func === "fFunc" ? "f(x)=" : "g(x)="}</i>
       </Text>
       <Box direction="row" style={{ marginTop: 10, marginLeft:20 }} >
