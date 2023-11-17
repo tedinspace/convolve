@@ -12,7 +12,7 @@ export function XRangeSetting(props: IProps) {
       <Text size="medium">
         x-range <i>[min, max]</i>
       </Text>
-      <Box direction="row" style={{ marginTop: 10,marginLeft:0 }} align="center">
+      <Box direction="row" style={{ marginTop: 10,marginLeft:20 }} align="center">
         <div>
           <TextInput
             type="number"
