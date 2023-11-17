@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Box } from "grommet";
-import Plot from "react-plotly.js";
 import { IEvaluation, IScenarioInput } from ".";
 import { LeftMenu } from "./LeftMenu";
 import { defaultInput } from "../functions/zoo";
