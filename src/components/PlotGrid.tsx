@@ -148,7 +148,7 @@ export function PlotGrid(props: IProps) {
             size: "2px",
             color: "bar_accent",
           }}
-          style={{ marginBottom: "10" }}
+          style={{ marginBottom: "10",height:55,minHeight:55 }}
         >
           <Box direction="row" fill justify="center" align="center">
             <Button

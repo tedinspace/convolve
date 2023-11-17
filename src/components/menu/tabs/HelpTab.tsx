@@ -1,7 +1,6 @@
 import { Box, Table, TableBody, TableRow, TableCell, Button } from "grommet";
 import { Copy } from "grommet-icons";
 import { copy } from "../../../functions/clipboard";
-
 const Latex = require("react-latex");
 
 export function HelpTab() {
