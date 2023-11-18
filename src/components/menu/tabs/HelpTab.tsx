@@ -5,9 +5,9 @@ const Latex = require("react-latex");
 
 export function HelpTab() {
   return (
-    <Box margin="small">
+    <Box margin="small" fill overflow={"auto"}>
       <Box align="center">
-        <Box border pad={{ top: "xsmall" }} margin={{top:"medium"}}>
+        <Box  pad={{ top: "xsmall" }} margin={{top:"medium"}}>
           <Table caption="Useful Arithmetic Functions">
             <TableBody>
               <TableRow>

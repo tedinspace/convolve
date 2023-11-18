@@ -19,9 +19,8 @@ export function LeftMenu(props: IProps) {
       pad="medium"
       elevation="small"
       border={{ color: "bar_accent", size: "2px", side: "right" }}
-      overflow={"auto"}
     >
-      <Tabs>
+      <Tabs flex >
         <Tab title="Input" icon={<Services />}>
           <InputTab {...props} />
         </Tab>
