@@ -116,9 +116,8 @@ export function FunctionInput(props: IProps) {
           fill="horizontal"
           color="time_bar"
           onClick={() => {
-
             let S = _.cloneDeep(props.input);
-            S[props.func].push(emptyFunction())
+            S[props.func].push(emptyFunction());
             props.updateInput(S);
           }}
         />
