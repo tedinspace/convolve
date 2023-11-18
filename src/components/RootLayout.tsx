@@ -26,7 +26,7 @@ class RootLayout extends Component<IProps, IState> {
 
   render() {
     return (
-      <Box fill direction="row">
+      <Box fill direction="row" >
         <LeftMenu
           {...this.state}
           updateInput={(i: IScenarioInput) => {

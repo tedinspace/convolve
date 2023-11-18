@@ -12,7 +12,7 @@ const theme_merged = deepMerge(grommet, theme);
 function App() {
   const [darkMode, toggleDarkLight] = useState(fetchThemeSetting(false));
   return (
-    <Grommet full theme={theme_merged} themeMode={darkMode ? "dark" : "light"}>
+    <Grommet full theme={theme_merged} themeMode={darkMode ? "dark" : "light"} >
       <Box fill>
         <TedHead
           darkMode={darkMode}
