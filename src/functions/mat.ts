@@ -1,8 +1,8 @@
 /**
- *
+ * create uniform x array based on range and cardinality 
  * @param min
  * @param max
- * @param cardinality
+ * @param cardinality - number of steps
  * @returns
  */
 export const linespace = (
@@ -27,7 +27,7 @@ export const linespace = (
 };
 
 /**
- *
+ * create a 1xn array of all zeros
  * @param n
  * @returns
  */
@@ -40,7 +40,7 @@ export const zeros = (n: number): number[] => {
 };
 
 /**
- *
+ * single convolution step at tau/z
  * @param f
  * @param g
  * @param stepSize
@@ -61,9 +61,9 @@ export const convolutionStep = (
 };
 
 /**
- *
+ * flip and shift x-array by z
  * @param x
- * @param z
+ * @param z - tau
  * @returns
  */
 export const flipAndShift = (x: number[], z: number) => {
@@ -75,7 +75,12 @@ export const flipAndShift = (x: number[], z: number) => {
    
 };
 
-
+/**
+ * add two arrays together 
+ * @param arr1 1xn
+ * @param arr2 1nx
+ * @returns 
+ */
 export const add = (arr1:number[], arr2:number[]):number[]=>{
   let out:number[]=[];
   arr1.forEach((n,i) => {

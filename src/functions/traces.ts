@@ -2,11 +2,11 @@ import { IScenarioInput, IEvaluation } from "../components";
 import { evaluateFunction } from "./evaluation";
 import { flipAndShift } from "./mat";
 /**
- * 
- * @param tau 
- * @param input 
- * @param results 
- * @returns 
+ * build a trace for g(x-tau)
+ * @param tau
+ * @param input
+ * @param results
+ * @returns
  */
 export const flippedGTrace = (
   tau: number,
@@ -38,10 +38,10 @@ export const flippedGTrace = (
   };
 };
 /**
- * 
- * @param tau 
- * @param results 
- * @returns 
+ * given an evaluated convolution, select a portion by step/tau
+ * @param tau
+ * @param results
+ * @returns
  */
 export const partialConvolutionTrace = (
   tau: number,

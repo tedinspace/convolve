@@ -1,3 +1,7 @@
+/**
+ * default plotly margins 
+ * @returns 
+ */
 export const default_margin = () => {
   return {
     t: 40, //top margin
@@ -6,7 +10,10 @@ export const default_margin = () => {
     b: 20, //bottom margin
   };
 };
-
+/**
+ * default plotly configurations
+ * @returns 
+ */
 export const default_config = ():any => {
   return {
     displaylogo: false,
@@ -20,7 +27,10 @@ export const default_config = ():any => {
     ],
   };
 };
-
+/**
+ * plotly dark layout design
+ * @returns 
+ */
 export const dark_layout = ():any=>{
   return {
     paper_bgcolor: "#1C2127",

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { Box } from "grommet";
 import { IEvaluation, IScenarioInput } from ".";
 import { LeftMenu } from "./menu/LeftMenu";
@@ -17,7 +17,6 @@ interface IState {
 class RootLayout extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
-
     this.state = {
       input: defaultInput(),
       results: runAllFunctionEvaluations(defaultInput()),
@@ -36,7 +35,6 @@ class RootLayout extends Component<IProps, IState> {
               results: runAllFunctionEvaluations(i),
             });
           }}
-     
         />
         <PlotGrid
           {...this.state}

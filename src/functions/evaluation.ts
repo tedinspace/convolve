@@ -9,7 +9,7 @@ import {
 import { flipAndShift, convolutionStep, linespace, add } from "./mat";
 
 /**
- *
+ * Attempts to evaluate f(x), g(x), and (f*g)(x)
  * @param input
  * @returns
  */
@@ -46,7 +46,7 @@ export const runAllFunctionEvaluations = (
 };
 
 /**
- *
+ * Evulate every portion of a function
  * @param func
  * @param x
  * @returns
@@ -73,6 +73,12 @@ export const evaluateFunction = (
   };
 };
 
+/**
+ * Evaluate a single piece of a function
+ * @param func
+ * @param x
+ * @returns
+ */
 export const evaluateSingleFunction = (
   func: IFunctionInput,
   x: number[]
@@ -103,7 +109,7 @@ export const evaluateSingleFunction = (
 };
 
 /**
- *
+ * Given evaluated f(x) and g(x), run the convolution
  * @param evalF
  * @param evalG
  * @param input

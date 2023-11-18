@@ -1,6 +1,10 @@
 import { Header, Box, Text } from "grommet";
 import { Deploy, Github, Home, Moon, Sun } from "grommet-icons";
-
+/**
+ * upper bar for website
+ * @param props 
+ * @returns 
+ */
 export function TedHead(props: { darkMode: boolean; toggleDarkLight(): void }) {
   return (
     <Header

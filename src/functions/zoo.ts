@@ -1,7 +1,7 @@
 import { IFunctionInput, IScenarioInput } from "../components";
 
 /**
- * 
+ * starting functions when app loaded
  * @returns 
  */
 export const defaultInput = (): IScenarioInput => {
@@ -14,6 +14,10 @@ export const defaultInput = (): IScenarioInput => {
   };
 };
 
+/**
+ * what's added when a piece is added
+ * @returns 
+ */
 export const emptyFunction = ():IFunctionInput =>{
   return {
     func: "0",
@@ -23,6 +27,10 @@ export const emptyFunction = ():IFunctionInput =>{
   }
 }
 
+/**
+ * left-facing right triangle
+ * @returns 
+ */
 const leftTriangle =():IFunctionInput=>{
   return {
     func: "x+1",
@@ -31,7 +39,10 @@ const leftTriangle =():IFunctionInput=>{
     rangeMax: 0,
   }
 }
-
+/**
+ * right-facing right triangle
+ * @returns 
+ */
 export const rightTriangle =():IFunctionInput=>{
   return {
     func: "-x+1",
@@ -40,6 +51,10 @@ export const rightTriangle =():IFunctionInput=>{
     rangeMax: 1,
   }
 }
+/**
+ * symmetric triangle
+ * @returns 
+ */
 export const symmetricTriangle =():IFunctionInput=>{
   return {
     func: "-abs(x)+1",
@@ -48,6 +63,10 @@ export const symmetricTriangle =():IFunctionInput=>{
     rangeMax: 1,
   }
 }
+/**
+ * unit square
+ * @returns 
+ */
 export const unitSquare =():IFunctionInput=>{
   return {
     func: "1",
@@ -56,7 +75,10 @@ export const unitSquare =():IFunctionInput=>{
     rangeMax: 1,
   }
 }
-
+/**
+ * area 1 rectangle with width 2 and height 1/2
+ * @returns 
+ */
 export const rectanguleWidth2 =():IFunctionInput=>{
   return {
     func: "1/2",
