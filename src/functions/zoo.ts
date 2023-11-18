@@ -9,10 +9,19 @@ export const defaultInput = (): IScenarioInput => {
     xRangeMin: -5,
     xRangeMax: 5,
     cardinality: 750,
-    fFunc: leftTriangle(),
-    gFunc: rightTriangle()
+    fFunc: [leftTriangle()],
+    gFunc: [rightTriangle()]
   };
 };
+
+export const emptyFunction = ():IFunctionInput =>{
+  return {
+    func: "0",
+    enforceRange: true,
+    rangeMin: 0,
+    rangeMax: 0,
+  }
+}
 
 const leftTriangle =():IFunctionInput=>{
   return {

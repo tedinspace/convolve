@@ -74,3 +74,12 @@ export const flipAndShift = (x: number[], z: number) => {
   return zMinusX
    
 };
+
+
+export const add = (arr1:number[], arr2:number[]):number[]=>{
+  let out:number[]=[];
+  arr1.forEach((n,i) => {
+    out.push(n + arr2[i])
+  });
+  return out;
+}

@@ -6,14 +6,16 @@ import {
   IFunctionInput,
   IEvaluation,
 } from "../components";
-import { flipAndShift, convolutionStep, linespace } from "./mat";
+import { flipAndShift, convolutionStep, linespace, add } from "./mat";
 
 /**
- * 
- * @param input 
- * @returns 
+ *
+ * @param input
+ * @returns
  */
-export const runAllFunctionEvaluations = (input: IScenarioInput): IEvaluation => {
+export const runAllFunctionEvaluations = (
+  input: IScenarioInput
+): IEvaluation => {
   // 1. is the range and cardinality
   if (
     _.isNumber(input.cardinality) &&
@@ -44,46 +46,68 @@ export const runAllFunctionEvaluations = (input: IScenarioInput): IEvaluation =>
 };
 
 /**
- * 
- * @param func 
- * @param x 
- * @returns 
+ *
+ * @param func
+ * @param x
+ * @returns
  */
 export const evaluateFunction = (
-    func: IFunctionInput,
-    x: number[]
-  ): {
-    x: number[];
-    y: number[];
-  } => {
-    let y: number[] = [];
-    try {
-      const node = parse(func.func);
-      x.forEach((xi) => {
-        if (func.enforceRange && (xi < func.rangeMin || xi > func.rangeMax)) {
-          y.push(0);
-        } else {
-          y.push(node.evaluate({ x: xi }));
-        }
-      });
-    } catch (e) {
-      return {
-        x: [],
-        y: [],
-      };
+  func: IFunctionInput[],
+  x: number[]
+): {
+  x: number[];
+  y: number[];
+} => {
+  let y: number[] = [];
+  func.forEach((fn) => {
+    let F = evaluateSingleFunction(fn, x);
+    if (_.isEmpty(y)) {
+      y = F.y;
+    } else if (F.y.length === y.length) {
+      y = add(y, F.y);
     }
-    return {
-      x: x,
-      y: y,
-    };
+  });
+  return {
+    x: x,
+    y: y,
   };
-  
+};
+
+export const evaluateSingleFunction = (
+  func: IFunctionInput,
+  x: number[]
+): {
+  x: number[];
+  y: number[];
+} => {
+  let y: number[] = [];
+  try {
+    const node = parse(func.func);
+    x.forEach((xi) => {
+      if (func.enforceRange && (xi < func.rangeMin || xi > func.rangeMax)) {
+        y.push(0);
+      } else {
+        y.push(node.evaluate({ x: xi }));
+      }
+    });
+  } catch (e) {
+    return {
+      x: [],
+      y: [],
+    };
+  }
+  return {
+    x: x,
+    y: y,
+  };
+};
+
 /**
- * 
- * @param evalF 
- * @param evalG 
- * @param input 
- * @returns 
+ *
+ * @param evalF
+ * @param evalG
+ * @param input
+ * @returns
  */
 export const convolve = (
   evalF: IParallelArrays,
@@ -105,7 +129,7 @@ export const convolve = (
       }
       return {
         x: x,
-        y:y
+        y: y,
       };
     } catch (e) {}
   }
@@ -114,4 +138,3 @@ export const convolve = (
     y: [],
   };
 };
-
