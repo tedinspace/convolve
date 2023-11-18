@@ -376,7 +376,7 @@ export function ExamplesTab(props: IProps) {
             </Box>
           </AccordionPanel>
           <AccordionPanel label={"12. Sawtooth Wave with Triangle"}>
-            <Latex>$f(x)= -|x|+1, x\in[-1,1]$</Latex>
+            <Latex>$f(x)= ...$piecewise</Latex>
             <Latex>$g(x)= -|x|+1, x\in[-1,1]$</Latex>
             <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
               <Button
