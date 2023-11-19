@@ -13,7 +13,7 @@ export function LeftMenu(props: IProps) {
   return (
     <Box
       style={{
-        width: 500,
+        width: 600,
       }}
       fill
       pad="medium"
