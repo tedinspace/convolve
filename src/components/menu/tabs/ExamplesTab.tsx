@@ -1,6 +1,7 @@
 import { Accordion, AccordionPanel, Box, Button, Text } from "grommet";
 import { IScenarioInput } from "../..";
 import {
+  defaultInput,
   rectanguleWidth2,
   rightTriangle,
   symmetricTriangle,
@@ -17,6 +18,58 @@ export function ExamplesTab(props: IProps) {
     <Box overflow={"auto"} fill>
       <div>
         <Accordion>
+          <AccordionPanel label="0. Two Right Triangles (default)">
+            <Latex>$f(x)=x+1, x\in[-1,0]$</Latex>
+            <Latex>$g(x)=-x+1, x\in[0,1]$</Latex>
+            <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
+              <Button
+                pad={"none"}
+                label="load scenario"
+                hoverIndicator
+                fill="horizontal"
+                color="time_bar"
+                onClick={() => {
+                  props.updateInput(defaultInput());
+                }}
+              />
+            </Box>
+            <br />
+            <Text color="orange">Analytical Solution:</Text>
+            <Box>
+              <ol>
+                <li>
+                  <Latex>{"$x<-1$"}</Latex>
+                  <br />
+                  <Latex>
+                    {"$∫^{-1}_{-∞} f(τ)g(x-τ) dτ= ∫^{-1}_{-∞} 0 dτ=0$"}
+                  </Latex>
+                </li>
+                <li>
+                  <Latex>$x \in [-1,0]$</Latex>
+                  <br />
+                  <Latex>
+                    {"$∫^{x}_{-1} f(τ)g(x-τ) dτ = ∫^{x}_{-1}  (τ+1)^2  dτ$"}
+                  </Latex>
+                  <Latex>$=(x+1)^3/3$</Latex>
+                </li>
+                <li>
+                <Latex>$x \in (0,1]$</Latex>
+                <br />
+                  <Latex>
+                    {"$∫^{1}_{x}f(τ)g(x-τ) dτ = ∫^{1}_{x} (1-τ)^2  dτ$"}
+                  </Latex><br/>
+                  <Latex>$=-(x-1)^3/3$</Latex>
+                </li>
+                <li>
+                  <Latex>{"$x>1$"}</Latex>
+                  <br />
+                  <Latex>
+                    {"$∫^{∞}_{1} f(τ)g(x-τ) dτ= ∫^{∞}_{1} 0 dτ=0$"}
+                  </Latex>
+                </li>
+              </ol>
+            </Box>
+          </AccordionPanel>
           <AccordionPanel label="1. Two Unit Squares">
             <Latex>$f(x)=1, x\in[0,1]$</Latex>
             <Latex>$g(x)=1, x\in[0,1]$</Latex>
@@ -433,9 +486,12 @@ export function ExamplesTab(props: IProps) {
 
 const StepByStepSolution = (props: { link: string }) => {
   return (
-    <a href={props.link} target="_blank" rel="noreferrer">
-      <Info size="medium" color="orange" />
-      step-by-step solution
-    </a>
+    <>
+      <br />
+      <a href={props.link} target="_blank" rel="noreferrer">
+        <Info size="medium" color="orange" />
+        step-by-step solution
+      </a>
+    </>
   );
 };
