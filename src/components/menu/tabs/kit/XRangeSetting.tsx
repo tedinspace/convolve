@@ -12,12 +12,16 @@ export function XRangeSetting(props: IProps) {
       <Text size="medium">
         x-range <i>[min, max]</i>
       </Text>
-      <Box direction="row" style={{ marginTop: 10,marginLeft:20 }} align="center">
+      <Box
+        direction="row"
+        style={{ marginTop: 10, marginLeft: 20 }}
+        align="center"
+      >
         <div>
           <TextInput
             type="number"
             size="medium"
-            value={props.input.xRangeMin}
+            defaultValue={props.input.xRangeMin}
             style={{ height: 25, textAlign: "center" }}
             width={"120px"}
             onChange={(e) => {
@@ -35,7 +39,7 @@ export function XRangeSetting(props: IProps) {
           <TextInput
             size="medium"
             type="number"
-            value={props.input.xRangeMax}
+            defaultValue={props.input.xRangeMax}
             style={{ height: 25, textAlign: "center" }}
             width={"120px"}
             onChange={(e) => {
