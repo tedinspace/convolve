@@ -34,7 +34,10 @@ export function ExamplesTab(props: IProps) {
               />
             </Box>
             <br />
-            <Text color="orange">Analytical Solution:</Text>
+            <Text color="orange">
+              <Info size="medium" color="orange" />
+              Analytical Solution:
+            </Text>
             <Box>
               <ol>
                 <li>
@@ -53,19 +56,18 @@ export function ExamplesTab(props: IProps) {
                   <Latex>$=(x+1)^3/3$</Latex>
                 </li>
                 <li>
-                <Latex>$x \in (0,1]$</Latex>
-                <br />
+                  <Latex>$x \in (0,1]$</Latex>
+                  <br />
                   <Latex>
                     {"$∫^{1}_{x}f(τ)g(x-τ) dτ = ∫^{1}_{x} (1-τ)^2  dτ$"}
-                  </Latex><br/>
+                  </Latex>
+                  <br />
                   <Latex>$=-(x-1)^3/3$</Latex>
                 </li>
                 <li>
                   <Latex>{"$x>1$"}</Latex>
                   <br />
-                  <Latex>
-                    {"$∫^{∞}_{1} f(τ)g(x-τ) dτ= ∫^{∞}_{1} 0 dτ=0$"}
-                  </Latex>
+                  <Latex>{"$∫^{∞}_{1} f(τ)g(x-τ) dτ= ∫^{∞}_{1} 0 dτ=0$"}</Latex>
                 </li>
               </ol>
             </Box>
@@ -91,6 +93,37 @@ export function ExamplesTab(props: IProps) {
                 }}
               />
             </Box>
+            <br />
+            <Text color="orange">
+              <Info size="medium" color="orange" />
+              Analytical Solution:
+            </Text>
+            <Box>
+              <ol>
+                <li>
+                  <Latex>{"$x<0$"}</Latex>
+                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
+                </li>
+                <li>
+                  <Latex>$x \in [0,1]$</Latex>
+                  <br />
+                  <Latex>{"$∫^{x}_{0}f(τ)g(x-τ) dτ = ∫^{x}_{0} 1 dτ$"}</Latex>
+                  <br />
+                  <Latex>$=x$</Latex>
+                </li>
+                <li>
+                  <Latex>$x \in (1,2]$</Latex>
+                  <br />
+                  <Latex>{"$∫^{2}_{x}f(τ)g(x-τ) dτ = ∫^{2}_{x} 1 dτ$"}</Latex>
+                  <br />
+                  <Latex>$=2-x$</Latex>
+                </li>
+                <li>
+                  <Latex>{"$x>2$"}</Latex>
+                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
+                </li>
+              </ol>
+            </Box>
           </AccordionPanel>
           <AccordionPanel label="2. Two Rectangular Pulses">
             <Latex>$f(x)=1, x\in[0,1]$</Latex>
@@ -112,6 +145,43 @@ export function ExamplesTab(props: IProps) {
                   });
                 }}
               />
+            </Box>
+            <br />
+            <Text color="orange">
+              <Info size="medium" color="orange" />
+              Analytical Solution:
+            </Text>
+            <Box>
+              <ol>
+                <li>
+                  <Latex>{"$x<0$"}</Latex>
+                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
+                </li>
+                <li>
+                  <Latex>$x\in[0,1]$</Latex>
+                  <br />
+                  <Latex>{"$∫^{x}_{0}f(τ)g(x-τ) dτ = ∫^{x}_{0} 1/2 dτ$"}</Latex>
+                  <br />
+                  <Latex>$=x/2$</Latex>
+                </li>
+                <li>
+                  <Latex>$x\in[1,2]$</Latex>
+                  <br />
+                  <Latex>{"$∫^{2}_{1}f(τ)g(x-τ) dτ = ∫^{2}_{1} 1/2 dτ$"}</Latex>
+                  <br />
+                  <Latex>$=1/2$</Latex>
+                </li>
+                <li>
+                  <Latex>$x\in[2,3]$</Latex> <br />
+                  <Latex>{"$∫^{3}_{x}f(τ)g(x-τ) dτ = ∫^{3}_{x} 1/2 dτ$"}</Latex>
+                  <br />
+                  <Latex>$=(3-x)/2$</Latex>
+                </li>
+                <li>
+                  <Latex>{"$x>3$"}</Latex>
+                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
+                </li>
+              </ol>
             </Box>
           </AccordionPanel>
           <AccordionPanel
@@ -348,13 +418,14 @@ export function ExamplesTab(props: IProps) {
               <Latex>{"$f(x)=sgn(x)$"}</Latex>
               <Latex>$, x\in[-5,5 ]$</Latex>
             </Box>
-
             <Latex>$g(x)= 1, x\in[0,1]$</Latex>
             <br />
-            <i>
-              Note: Convolution with an infinite signum function looks like the
-              (f*g)(x) results on [-4,4]
-            </i>
+            <Text color="orange">
+              <i>
+                Note: Convolution with an infinite signum function looks like
+                the (f*g)(x) results on [-4,4]
+              </i>
+            </Text>
             <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
               <Button
                 pad={"none"}
