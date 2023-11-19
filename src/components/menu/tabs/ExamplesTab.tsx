@@ -52,7 +52,8 @@ export function ExamplesTab(props: IProps) {
                   <br />
                   <Latex>
                     {"$∫^{x}_{-1} f(τ)g(x-τ) dτ = ∫^{x}_{-1}  (τ+1)^2  dτ$"}
-                  </Latex><br/>
+                  </Latex>
+                  <br />
                   <Latex>$=(x+1)^3/3$</Latex>
                 </li>
                 <li>
@@ -152,7 +153,7 @@ export function ExamplesTab(props: IProps) {
               Analytical Solution
             </Text>
             <Box border={{ color: "orange", size: "2px" }}>
-            <ol className="solution">
+              <ol className="solution">
                 <li>
                   <Latex>{"$x<0$"}</Latex>
                   <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
@@ -568,6 +569,75 @@ export function ExamplesTab(props: IProps) {
                 }}
               />
             </Box>
+          </AccordionPanel>
+          <AccordionPanel label={"13. Two Normal Distributions"}>
+            <Latex>$f(x) = X \sim N(0,1)$</Latex>
+            <Latex>$g(x) = Y \sim N(1.5,4)$</Latex>
+            <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
+              <Button
+                pad={"none"}
+                label="load scenario"
+                hoverIndicator
+                fill="horizontal"
+                color="time_bar"
+                onClick={() => {
+                  props.updateInput({
+                    xRangeMin: -5,
+                    xRangeMax: 8,
+                    cardinality: 750,
+                    fFunc: [
+                      {
+                        func: "1/sqrt(2*pi)*e^(-x^2/2)",
+                        enforceRange: false,
+                        rangeMin: -5,
+                        rangeMax: 8,
+                      },
+                    ],
+                    gFunc: [
+                      {
+                        func: "1/(2*sqrt(2*pi))*e^(-(x-1.5)^2/(2*2^2))",
+                        enforceRange: false,
+                        rangeMin: -5,
+                        rangeMax: 8,
+                      },
+                    ],
+                  });
+                }}
+              />
+            </Box>
+            <br />
+            <Text color="orange">
+              <Info size="medium" color="orange" />
+              Solution
+            </Text>
+            <Box border={{ color: "orange", size: "2px" }} pad="small">
+              <a
+                href="https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Use the linear property of Normal random variables
+              </a>
+              <br />
+              <Latex>$X+Y = $</Latex>
+              <br />
+              <Latex>$ Z \sim N(\mu_X + \mu_Y, \sigma_X^2 + \sigma_X^2)$</Latex>
+              <Latex>$ Z \sim N(1.5, 5)$</Latex>
+              <br />
+              This leaves us with a distribution with
+              <Latex>$\mu_Z = 1.5$</Latex>
+              <br />
+              <Latex>$\sigma_Z = \sqrt 5$</Latex>
+              <br />
+              <a
+                href="https://www.desmos.com/calculator/xgaf3jxbf5"
+                target="_blank"
+                rel="noreferrer"
+              >
+                TIP - use Desmos to verify
+              </a>
+            </Box>
+            <br />
           </AccordionPanel>
         </Accordion>
       </div>
