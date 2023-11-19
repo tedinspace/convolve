@@ -36,3 +36,5 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
+
+.solution li{margin-bottom:25px}

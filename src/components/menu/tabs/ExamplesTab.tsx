@@ -39,7 +39,7 @@ export function ExamplesTab(props: IProps) {
               Analytical Solution
             </Text>
             <Box border={{ color: "orange", size: "2px" }}>
-              <ol>
+              <ol className="solution">
                 <li>
                   <Latex>{"$x<-1$"}</Latex>
                   <br />
@@ -99,7 +99,7 @@ export function ExamplesTab(props: IProps) {
               Analytical Solution
             </Text>
             <Box border={{ color: "orange", size: "2px" }}>
-              <ol>
+              <ol className="solution">
                 <li>
                   <Latex>{"$x<0$"}</Latex>
                   <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
@@ -152,7 +152,7 @@ export function ExamplesTab(props: IProps) {
               Analytical Solution
             </Text>
             <Box border={{ color: "orange", size: "2px" }}>
-              <ol>
+            <ol className="solution">
                 <li>
                   <Latex>{"$x<0$"}</Latex>
                   <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
@@ -376,7 +376,7 @@ export function ExamplesTab(props: IProps) {
               Analytical Solution
             </Text>
             <Box border={{ color: "orange", size: "2px" }}>
-              <ol>
+              <ol className="solution">
                 <li>
                   <Latex>{"$x<0$"}</Latex>
                   <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
