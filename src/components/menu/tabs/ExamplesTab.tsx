@@ -571,8 +571,8 @@ export function ExamplesTab(props: IProps) {
             </Box>
           </AccordionPanel>
           <AccordionPanel label={"13. Two Normal Distributions"}>
-            <Latex>$f(x) = X \sim N(0,1)$</Latex>
-            <Latex>$g(x) = Y \sim N(1.5,4)$</Latex>
+            <Latex>$f(x) = A \sim N(0,1)$</Latex>
+            <Latex>$g(x) = B \sim N(1.5,4)$</Latex>
             <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
               <Button
                 pad={"none"}
@@ -619,9 +619,9 @@ export function ExamplesTab(props: IProps) {
                 Use the linear property of Normal random variables
               </a>
               <br />
-              <Latex>$X+Y = $</Latex>
+              <Latex>$A+B = $</Latex>
               <br />
-              <Latex>$ Z \sim N(\mu_X + \mu_Y, \sigma_X^2 + \sigma_X^2)$</Latex>
+              <Latex>$ Z \sim N(\mu_A + \mu_B, \sigma_A^2 + \sigma_B^2)$</Latex>
               <Latex>$ Z \sim N(1.5, 5)$</Latex>
               <br />
               This leaves us with a distribution with
