@@ -36,9 +36,9 @@ export function ExamplesTab(props: IProps) {
             <br />
             <Text color="orange">
               <Info size="medium" color="orange" />
-              Analytical Solution:
+              Analytical Solution
             </Text>
-            <Box>
+            <Box border={{ color: "orange", size: "2px" }}>
               <ol>
                 <li>
                   <Latex>{"$x<-1$"}</Latex>
@@ -96,9 +96,9 @@ export function ExamplesTab(props: IProps) {
             <br />
             <Text color="orange">
               <Info size="medium" color="orange" />
-              Analytical Solution:
+              Analytical Solution
             </Text>
-            <Box>
+            <Box border={{ color: "orange", size: "2px" }}>
               <ol>
                 <li>
                   <Latex>{"$x<0$"}</Latex>
@@ -149,9 +149,9 @@ export function ExamplesTab(props: IProps) {
             <br />
             <Text color="orange">
               <Info size="medium" color="orange" />
-              Analytical Solution:
+              Analytical Solution
             </Text>
-            <Box>
+            <Box border={{ color: "orange", size: "2px" }}>
               <ol>
                 <li>
                   <Latex>{"$x<0$"}</Latex>
@@ -369,6 +369,35 @@ export function ExamplesTab(props: IProps) {
                   });
                 }}
               />
+            </Box>
+            <br />
+            <Text color="orange">
+              <Info size="medium" color="orange" />
+              Analytical Solution
+            </Text>
+            <Box border={{ color: "orange", size: "2px" }}>
+              <ol>
+                <li>
+                  <Latex>{"$x<0$"}</Latex>
+                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
+                </li>
+                <li>
+                  <Latex>$x \in (0,1]$</Latex>
+                  <br />
+                  <Latex>{"$∫^{x}_{0}f(τ)g(x-τ) dτ = ∫^{x}_{0} 1-τ dτ$"}</Latex>
+                  <br />
+                  <Latex>$=-x(x-2)/2$</Latex>
+                </li>
+                <li>
+                  <Latex>$x \in (1,2]$</Latex>
+                  <br />
+                  <Latex>{"$∫^{2}_{x}f(τ)g(x-τ) dτ =(2-x)^2/2$"}</Latex>{" "}
+                </li>
+                <li>
+                  <Latex>{"$x>2$"}</Latex>
+                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
+                </li>
+              </ol>
             </Box>
           </AccordionPanel>
           <AccordionPanel label={"9. Two Exponential Distributions"}>
