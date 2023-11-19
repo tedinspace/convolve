@@ -54,6 +54,14 @@ export const theme = {
         dark: "#fff",
         light: "#8F99A8",
       },
+      swap_hard: {
+        dark: "#fff",
+        light: "#000",
+      },
+      no_swap: {
+        dark: "#000",
+        light: "#fff",
+      },
       time_bar: {
         dark: "#383E47",
         light: "#D3D8DE",
@@ -71,6 +79,7 @@ export const theme = {
       focus: "light_blue",
       control: "light_blue",
       active: "orange_medium",
+      'background-contrast': 'swap_hard'
     },
   },
   tab: {
