@@ -52,7 +52,7 @@ export function ExamplesTab(props: IProps) {
                   <br />
                   <Latex>
                     {"$∫^{x}_{-1} f(τ)g(x-τ) dτ = ∫^{x}_{-1}  (τ+1)^2  dτ$"}
-                  </Latex>
+                  </Latex><br/>
                   <Latex>$=(x+1)^3/3$</Latex>
                 </li>
                 <li>
