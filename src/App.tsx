@@ -5,7 +5,7 @@ import { Grommet } from "grommet";
 import { TedHead } from "./shared/TedHead";
 import { deepMerge } from "grommet/utils";
 import { theme } from "./shared/themes";
-import RootLayout from "./components/RootLayout";
+import {RootLayout} from "./components/RootLayout";
 import { fetchThemeSetting, updateThemeSetting } from "./shared/storage";
 const theme_merged = deepMerge(grommet, theme);
 

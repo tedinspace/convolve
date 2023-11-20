@@ -1,7 +1,6 @@
 import { Box, Button, RangeInput } from "grommet";
 import Plot from "react-plotly.js";
 import { default_margin, default_config, dark_layout } from "../functions/plot";
-import { partialConvolutionTrace, flippedGTrace } from "../functions/traces";
 import { IEvaluation, IScenarioInput } from ".";
 import {
   ChapterNext,
@@ -9,6 +8,7 @@ import {
   FastForward,
   Rewind,
 } from "grommet-icons";
+import { dynamicTraces } from "../functions/traces";
 const Latex = require("react-latex");
 const STEP_SIZE: number = 20;
 interface IProps {
@@ -144,20 +144,7 @@ export function PlotGrid(props: IProps) {
       </Box>
       <Box fill pad="xsmall">
         <Plot
-          data={[
-            {
-              x: props.results.f.x,
-              y: props.results.f.y,
-              type: "scattergl",
-              mode: "lines",
-              marker: { color: "red" },
-              line: {
-                dash: "dot",
-              },
-            },
-            flippedGTrace(props.tau, props.input, props.results),
-            partialConvolutionTrace(props.tau, props.results),
-          ]}
+          data={dynamicTraces(props.input,props.results,props.tau)}
           style={{ width: "100%", height: "100%" }}
           useResizeHandler={true}
           layout={

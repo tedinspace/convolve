@@ -63,3 +63,31 @@ export const partialConvolutionTrace = (
     marker: { color: "green" },
   };
 };
+
+/**
+ * responsible for buidling the lower interactive traces. 
+ * @param input 
+ * @param results 
+ * @param tau 
+ * @returns 
+ */
+export const dynamicTraces = (
+  input: IScenarioInput,
+  results: IEvaluation,
+  tau: number
+):any[] => {
+  return [
+    {
+      x: results.f.x,
+      y: results.f.y,
+      type: "scattergl",
+      mode: "lines",
+      marker: { color: "red" },
+      line: {
+        dash: "dot",
+      },
+    },
+    flippedGTrace(tau, input, results),
+    partialConvolutionTrace(tau, results),
+  ];
+};

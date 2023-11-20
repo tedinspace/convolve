@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { Box } from "grommet";
 import { IEvaluation, IScenarioInput } from ".";
 import { LeftMenu } from "./menu/LeftMenu";
@@ -9,43 +9,50 @@ import { PlotGrid } from "./PlotGrid";
 interface IProps {
   darkMode: boolean;
 }
-interface IState {
-  input: IScenarioInput;
-  results: IEvaluation;
-  tau: number;
-}
-class RootLayout extends Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props);
-    this.state = {
-      input: defaultInput(),
-      results: runAllFunctionEvaluations(defaultInput()),
-      tau: 1,
-    };
-  }
 
-  render() {
-    return (
-      <Box fill direction="row" >
-        <LeftMenu
-          {...this.state}
-          updateInput={(i: IScenarioInput) => {
-            this.setState({
-              input: i,
-              results: runAllFunctionEvaluations(i),
-            });
-          }}
-        />
-        <PlotGrid
-          {...this.state}
-          darkMode={this.props.darkMode}
-          updateTau={(t) => {
-            this.setState({ tau: t });
-          }}
-        />
-      </Box>
-    );
-  }
-}
+export function RootLayout(props: IProps) {
+  const [input, updateInput] = useState<IScenarioInput>(defaultInput());
+  const [results, updateResults] = useState<IEvaluation>(
+    runAllFunctionEvaluations(defaultInput())
+  );
+  const [tau, updateTau] = useState<number>(1);
 
-export default RootLayout;
+
+  const counter: Worker = useMemo(
+    () => new Worker(new URL("../workers/runFunctionEval.ts", import.meta.url)),
+    []
+  );
+
+
+  useEffect(() => {
+    if (window.Worker) {
+      counter.onmessage = (e: MessageEvent<IEvaluation>) => {
+        updateResults(e.data);
+      };
+    }
+  }, [counter]);
+
+  return (
+    <Box fill direction="row">
+      <LeftMenu
+        input={input}
+        updateInput={(i: IScenarioInput) => {
+          updateInput(i);
+          if (window.Worker) {
+            counter.postMessage(i);
+          }
+        }}
+      />
+      <PlotGrid
+        results={results}
+        input={input}
+        tau={tau}
+        darkMode={props.darkMode}
+        updateTau={(t) => {
+          updateTau(t);
+         
+        }}
+      />
+    </Box>
+  );
+}
