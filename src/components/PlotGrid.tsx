@@ -9,6 +9,7 @@ import {
   Rewind,
 } from "grommet-icons";
 import { dynamicTraces } from "../functions/traces";
+import { useMemo } from "react";
 const Latex = require("react-latex");
 const STEP_SIZE: number = 20;
 interface IProps {
@@ -19,6 +20,11 @@ interface IProps {
   updateTau(tau: number): void;
 }
 export function PlotGrid(props: IProps) {
+  const builtTraces = useMemo(
+    () => dynamicTraces(props.input, props.results, props.tau),
+    [props.input, props.results, props.tau]
+  );
+
   return (
     <Box fill>
       <Box
@@ -144,7 +150,7 @@ export function PlotGrid(props: IProps) {
       </Box>
       <Box fill pad="xsmall">
         <Plot
-          data={dynamicTraces(props.input,props.results,props.tau)}
+          data={builtTraces}
           style={{ width: "100%", height: "100%" }}
           useResizeHandler={true}
           layout={

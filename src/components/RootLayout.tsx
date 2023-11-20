@@ -17,20 +17,18 @@ export function RootLayout(props: IProps) {
   );
   const [tau, updateTau] = useState<number>(1);
 
-
-  const counter: Worker = useMemo(
+  const evaluator: Worker = useMemo(
     () => new Worker(new URL("../workers/runFunctionEval.ts", import.meta.url)),
     []
   );
 
-
   useEffect(() => {
     if (window.Worker) {
-      counter.onmessage = (e: MessageEvent<IEvaluation>) => {
+      evaluator.onmessage = (e: MessageEvent<IEvaluation>) => {
         updateResults(e.data);
       };
     }
-  }, [counter]);
+  }, [evaluator]);
 
   return (
     <Box fill direction="row">
@@ -39,7 +37,7 @@ export function RootLayout(props: IProps) {
         updateInput={(i: IScenarioInput) => {
           updateInput(i);
           if (window.Worker) {
-            counter.postMessage(i);
+            evaluator.postMessage(i);
           }
         }}
       />
