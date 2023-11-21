@@ -587,7 +587,7 @@ export function ExamplesTab(props: IProps) {
                     cardinality: 750,
                     fFunc: [
                       {
-                        func: "1/sqrt(2*pi)*e^(-x^2/2)",
+                        func: "1/sqrt(2*pi)*exp(-x^2/2)",
                         enforceRange: false,
                         rangeMin: -5,
                         rangeMax: 8,
@@ -595,7 +595,7 @@ export function ExamplesTab(props: IProps) {
                     ],
                     gFunc: [
                       {
-                        func: "1/(2*sqrt(2*pi))*e^(-(x-1.5)^2/(2*2^2))",
+                        func: "1/(2*sqrt(2*pi))*exp(-(x-1.5)^2/8)",
                         enforceRange: false,
                         rangeMin: -5,
                         rangeMax: 8,
