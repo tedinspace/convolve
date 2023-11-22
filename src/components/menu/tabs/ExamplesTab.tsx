@@ -19,8 +19,8 @@ export function ExamplesTab(props: IProps) {
       <div>
         <Accordion>
           <AccordionPanel label="0. Two Right Triangles (default)">
-            <Latex>$f(x)=x+1, x\in[-1,0]$</Latex>
-            <Latex>$g(x)=-x+1, x\in[0,1]$</Latex>
+            <div className="sol">f(x) = x + 1, x ∈ [-1,0]</div>
+            <div className="sol">g(x) = -x + 1, x ∈ [0,1]</div>
             <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
               <Button
                 pad={"none"}
@@ -41,14 +41,14 @@ export function ExamplesTab(props: IProps) {
             <Box border={{ color: "orange", size: "2px" }}>
               <ol className="solution">
                 <li>
-                  <Latex>{"$x<-1$"}</Latex>
+                  <div className="sol">{"x < −1"}</div>
                   <br />
                   <Latex>
                     {"$∫^{-1}_{-∞} f(τ)g(x-τ) dτ= ∫^{-1}_{-∞} 0 dτ=0$"}
                   </Latex>
                 </li>
                 <li>
-                  <Latex>$x \in [-1,0]$</Latex>
+                  <div className="sol">{"x ∈ [−1,0]"}</div>
                   <br />
                   <Latex>
                     {"$∫^{x}_{-1} f(τ)g(x-τ) dτ = ∫^{x}_{-1}  (τ+1)^2  dτ$"}
@@ -57,7 +57,7 @@ export function ExamplesTab(props: IProps) {
                   <Latex>$=(x+1)^3/3$</Latex>
                 </li>
                 <li>
-                  <Latex>$x \in (0,1]$</Latex>
+                  <div className="sol">{"x ∈ [0,1]"}</div>
                   <br />
                   <Latex>
                     {"$∫^{1}_{x}f(τ)g(x-τ) dτ = ∫^{1}_{x} (1-τ)^2  dτ$"}
@@ -66,7 +66,7 @@ export function ExamplesTab(props: IProps) {
                   <Latex>$=-(x-1)^3/3$</Latex>
                 </li>
                 <li>
-                  <Latex>{"$x>1$"}</Latex>
+                  <div className="sol">{"x > 1"}</div>
                   <br />
                   <Latex>{"$∫^{∞}_{1} f(τ)g(x-τ) dτ= ∫^{∞}_{1} 0 dτ=0$"}</Latex>
                 </li>
@@ -74,8 +74,8 @@ export function ExamplesTab(props: IProps) {
             </Box>
           </AccordionPanel>
           <AccordionPanel label="1. Two Unit Squares">
-            <Latex>$f(x)=1, x\in[0,1]$</Latex>
-            <Latex>$g(x)=1, x\in[0,1]$</Latex>
+            <div className="sol">f(x) = 1, x ∈ [0,1]</div>
+            <div className="sol">g(x) = 1, x ∈ [0,1]</div>
             <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
               <Button
                 pad={"none"}
@@ -127,8 +127,8 @@ export function ExamplesTab(props: IProps) {
             </Box>
           </AccordionPanel>
           <AccordionPanel label="2. Two Rectangular Pulses">
-            <Latex>$f(x)=1, x\in[0,1]$</Latex>
-            <Latex>$g(x)=1/2, x\in[-1,1]$</Latex>
+            <Latex>$f(x) = 1, x\in[0,1]$</Latex>
+            <Latex>$g(x) = 1/2, x\in[-1,1]$</Latex>
             <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
               <Button
                 pad={"none"}
@@ -155,32 +155,35 @@ export function ExamplesTab(props: IProps) {
             <Box border={{ color: "orange", size: "2px" }}>
               <ol className="solution">
                 <li>
-                  <Latex>{"$x<0$"}</Latex>
-                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
+                  <div className="sol">{"x < 0"}</div>
+                  <br />
+                  <div className="sol">{"(f * g)(x)=0"}</div>
                 </li>
                 <li>
-                  <Latex>$x\in[0,1]$</Latex>
+                  <div className="sol">{"x ∈ [0,1]"}</div>
                   <br />
                   <Latex>{"$∫^{x}_{0}f(τ)g(x-τ) dτ = ∫^{x}_{0} 1/2 dτ$"}</Latex>
                   <br />
-                  <Latex>$=x/2$</Latex>
+                  <div className="sol">{"= x/2"}</div>
                 </li>
                 <li>
-                  <Latex>$x\in[1,2]$</Latex>
+                <div className="sol">{"x ∈ [1,2]"}</div>
                   <br />
                   <Latex>{"$∫^{2}_{1}f(τ)g(x-τ) dτ = ∫^{2}_{1} 1/2 dτ$"}</Latex>
                   <br />
-                  <Latex>$=1/2$</Latex>
+                  <div className="sol">{"= 1/2"}</div>
                 </li>
                 <li>
-                  <Latex>$x\in[2,3]$</Latex> <br />
+                <div className="sol">{"x ∈ [2,3]"}</div>
+                <br />
                   <Latex>{"$∫^{3}_{x}f(τ)g(x-τ) dτ = ∫^{3}_{x} 1/2 dτ$"}</Latex>
                   <br />
-                  <Latex>$=(3-x)/2$</Latex>
+                  <div className="sol">{"= (3 - x)/2"}</div>
                 </li>
                 <li>
-                  <Latex>{"$x>3$"}</Latex>
-                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
+                  <div className="sol">{"x > 3"}</div>
+                  <br /> 
+                  <div className="sol">{"(f * g)(x) = 0"}</div>
                 </li>
               </ol>
             </Box>
@@ -371,35 +374,6 @@ export function ExamplesTab(props: IProps) {
                 }}
               />
             </Box>
-            <br />
-            <Text color="orange">
-              <Info size="medium" color="orange" />
-              Analytical Solution
-            </Text>
-            <Box border={{ color: "orange", size: "2px" }}>
-              <ol className="solution">
-                <li>
-                  <Latex>{"$x<0$"}</Latex>
-                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
-                </li>
-                <li>
-                  <Latex>$x \in (0,1]$</Latex>
-                  <br />
-                  <Latex>{"$∫^{x}_{0}f(τ)g(x-τ) dτ = ∫^{x}_{0} 1-τ dτ$"}</Latex>
-                  <br />
-                  <Latex>$=-x(x-2)/2$</Latex>
-                </li>
-                <li>
-                  <Latex>$x \in (1,2]$</Latex>
-                  <br />
-                  <Latex>{"$∫^{2}_{x}f(τ)g(x-τ) dτ =(2-x)^2/2$"}</Latex>{" "}
-                </li>
-                <li>
-                  <Latex>{"$x>2$"}</Latex>
-                  <br /> <Latex>{"$(f*g)(x) =0$"}</Latex>
-                </li>
-              </ol>
-            </Box>
           </AccordionPanel>
           <AccordionPanel label={"9. Two Exponential Distributions"}>
             <Box direction="row">
@@ -444,11 +418,9 @@ export function ExamplesTab(props: IProps) {
             </Box>
           </AccordionPanel>
           <AccordionPanel label={"10. Signum with Triangle"}>
-            <Box direction="row">
-              <Latex>{"$f(x)=sgn(x)$"}</Latex>
-              <Latex>$, x\in[-5,5 ]$</Latex>
-            </Box>
-            <Latex>$g(x)= 1, x\in[0,1]$</Latex>
+            <div className="sol">f(x) = sgn(x), x ∈ [-5,5] </div>
+            <div className="sol">g(x) = −∣x∣+1, x ∈ [−1,1] </div>
+            
             <br />
             <Text color="orange">
               <i>
@@ -489,13 +461,8 @@ export function ExamplesTab(props: IProps) {
             </Box>
           </AccordionPanel>
           <AccordionPanel label={"11. Sinc with Rectangle"}>
-            <Box direction="row">
-              <Latex>{"$f(x)=sinc(x)$"}</Latex>
-              <Latex>$, x\in[-5,5 ]$</Latex>
-            </Box>
-
-            <Latex>$g(x)= 1/6, x\in[-3,3]$</Latex>
-
+            <div className="sol">f(x) = sinc(x), x ∈ [-5,5] </div>
+            <div className="sol">g(x) = 1/6, x ∈ [-3,3] </div>
             <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
               <Button
                 pad={"none"}
@@ -530,8 +497,8 @@ export function ExamplesTab(props: IProps) {
             </Box>
           </AccordionPanel>
           <AccordionPanel label={"12. Sawtooth Wave with Triangle"}>
-            <Latex>$f(x)= ...$piecewise</Latex>
-            <Latex>$g(x)= -|x|+1, x\in[-1,1]$</Latex>
+            <div className="sol">f(x) = ... piecewise</div>
+            <div className="sol">g(x) = - |x| + 1, x ∈ [-1,1]</div>
             <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
               <Button
                 pad={"none"}
@@ -571,8 +538,9 @@ export function ExamplesTab(props: IProps) {
             </Box>
           </AccordionPanel>
           <AccordionPanel label={"13. Two Normal Distributions"}>
-            <Latex>$f(x) = A \sim N(0,1)$</Latex>
-            <Latex>$g(x) = B \sim N(1.5,4)$</Latex>
+            <div className="sol">f(x) = A ~ N(0,1)</div>
+            <div className="sol">g(x) = B ~ N(1.5,4)</div>
+
             <Box width={"225px"} style={{ paddingTop: 15, paddingBottom: 15 }}>
               <Button
                 pad={"none"}
@@ -610,7 +578,11 @@ export function ExamplesTab(props: IProps) {
               <Info size="medium" color="orange" />
               Solution
             </Text>
-            <Box border={{ color: "orange", size: "2px" }} pad="small">
+            <Box
+              border={{ color: "orange", size: "2px" }}
+              pad="small"
+              
+            >
               <a
                 href="https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables"
                 target="_blank"
@@ -619,15 +591,11 @@ export function ExamplesTab(props: IProps) {
                 Use the linear property of Normal random variables
               </a>
               <br />
-              <Latex>$A+B = $</Latex>
+              <div className="sol">A + B = </div>
               <br />
-              <Latex>$ Z \sim N(\mu_A + \mu_B, \sigma_A^2 + \sigma_B^2)$</Latex>
-              <Latex>$ Z \sim N(1.5, 5)$</Latex>
+              <div className="sol"> Z ~ N(0+1.5, 1+4)</div>
               <br />
-              This leaves us with a distribution with
-              <Latex>$\mu_Z = 1.5$</Latex>
-              <br />
-              <Latex>$\sigma_Z = \sqrt 5$</Latex>
+              <div className="sol"> Z ~ N(1.5, 5)</div>
               <br />
               <a
                 href="https://www.desmos.com/calculator/xgaf3jxbf5"
