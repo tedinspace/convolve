@@ -22,7 +22,7 @@ export function FunctionInput(props: IProps) {
             <Box direction="row" style={{ marginTop: 10, marginLeft: 20 }}>
               <div>
                 <TextInput
-                  defaultValue={fn.func}
+                  value={fn.func}
                   style={{ height: 25 }}
                   width={"225px"}
                   onChange={(e) => {
@@ -56,7 +56,7 @@ export function FunctionInput(props: IProps) {
                 <TextInput
                   type="number"
                   size="medium"
-                  defaultValue={fn.rangeMin}
+                  value={fn.rangeMin}
                   style={{ height: 25, textAlign: "center" }}
                   width={"90px"}
                   disabled={!fn.enforceRange}
@@ -72,7 +72,7 @@ export function FunctionInput(props: IProps) {
                 <TextInput
                   size="medium"
                   type="number"
-                  defaultValue={fn.rangeMax}
+                  value={fn.rangeMax}
                   style={{ height: 25, textAlign: "center" }}
                   width={"90px"}
                   disabled={!fn.enforceRange}
