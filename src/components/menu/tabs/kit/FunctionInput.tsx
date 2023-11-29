@@ -18,11 +18,11 @@ export function FunctionInput(props: IProps) {
       </Text>
       {_.map(props.input[props.func], (fn: IFunctionInput, i: number) => {
         return (
-          <span id={"cont-" + i} key={i}>
+          <span key={'key-'+props.func+'-'+i+'-'+props.input.fFunc.length+props.input.gFunc.length}>
             <Box direction="row" style={{ marginTop: 10, marginLeft: 20 }}>
               <div>
                 <TextInput
-                  value={fn.func}
+                  defaultValue={fn.func}
                   style={{ height: 25 }}
                   width={"225px"}
                   onChange={(e) => {
@@ -56,7 +56,7 @@ export function FunctionInput(props: IProps) {
                 <TextInput
                   type="number"
                   size="medium"
-                  value={fn.rangeMin}
+                  defaultValue={fn.rangeMin}
                   style={{ height: 25, textAlign: "center" }}
                   width={"90px"}
                   disabled={!fn.enforceRange}
@@ -72,7 +72,7 @@ export function FunctionInput(props: IProps) {
                 <TextInput
                   size="medium"
                   type="number"
-                  value={fn.rangeMax}
+                  defaultValue={fn.rangeMax}
                   style={{ height: 25, textAlign: "center" }}
                   width={"90px"}
                   disabled={!fn.enforceRange}
