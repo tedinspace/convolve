@@ -10,7 +10,7 @@ interface IProps {
 }
 export function InputTab(props: IProps) {
   return (
-    <Box fill overflow={"auto"}>
+    <Box fill overflow={"auto"} align="center" >
       <div><XRangeSetting {...props}/></div>
       <div><FunctionInput {...props} func="fFunc"/></div>
       <div><FunctionInput {...props} func="gFunc"/></div>
