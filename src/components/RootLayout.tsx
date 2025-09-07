@@ -5,6 +5,7 @@ import { LeftMenu } from "./menu/LeftMenu";
 import { defaultInput } from "../functions/zoo";
 import { runAllFunctionEvaluations } from "../functions/evaluation";
 import { PlotGrid } from "./PlotGrid";
+import { isPhone } from "../functions/phone";
 
 interface IProps {
   darkMode: boolean;
@@ -23,6 +24,9 @@ export function RootLayout(props: IProps) {
   );
 
   useEffect(() => {
+    if(isPhone()){
+      alert("WARNING: You are using a device or screen size incompatible with this application")
+    }
     if (window.Worker) {
       evaluator.onmessage = (e: MessageEvent<IEvaluation>) => {
         updateResults(e.data);
